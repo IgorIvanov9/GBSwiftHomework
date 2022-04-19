@@ -71,7 +71,7 @@ extension Journal: CustomStringConvertible {
     }
 }
 
-class Lesson5 {
+class Lesson6 {
     
     init() {
         
