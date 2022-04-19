@@ -8,8 +8,12 @@
 import Foundation
 
 class Lesson1 {
- 
-    func solveQuadraticEquation() {
+    
+    init() {
+        solveQuadraticEquation()
+    }
+    
+    private func solveQuadraticEquation() {
      // Решить квадратное уравнение ax^2-bx+c=0
     let a  = 1.0
     let b  = 10.0
@@ -47,7 +51,6 @@ class Lesson1 {
 
     let finalSumm: Double = money * (1 + pow((procent / 100), Double(years)))
     print("Финальная сумма с учетом процентов \(finalSumm)")
-
     }
     
 }
