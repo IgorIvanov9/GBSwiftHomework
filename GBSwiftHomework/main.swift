@@ -9,4 +9,5 @@ import Foundation
 
 let lesson1 = Lesson1()
 
-lesson1.solveQuadraticEquation()
+
+let lesson2 = Lesson2()

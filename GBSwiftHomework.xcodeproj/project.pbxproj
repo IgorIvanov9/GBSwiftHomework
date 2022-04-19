@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7808BBB9280F20560020B777 /* lesson1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7808BBB8280F20560020B777 /* lesson1.swift */; };
+		78596FB0280F2CB200A7AC78 /* lesson2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78596FAF280F2CB200A7AC78 /* lesson2.swift */; };
 		78F176D4280F0C4400EE4D9A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F176D3280F0C4400EE4D9A /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		7808BBB8280F20560020B777 /* lesson1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lesson1.swift; sourceTree = "<group>"; };
+		78596FAF280F2CB200A7AC78 /* lesson2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lesson2.swift; sourceTree = "<group>"; };
 		78F176D0280F0C4400EE4D9A /* GBSwiftHomework */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GBSwiftHomework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F176D3280F0C4400EE4D9A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,10 +45,17 @@
 		7808BBB3280F1F430020B777 /* lesson1 */ = {
 			isa = PBXGroup;
 			children = (
-				78F176D3280F0C4400EE4D9A /* main.swift */,
 				7808BBB8280F20560020B777 /* lesson1.swift */,
 			);
 			path = lesson1;
+			sourceTree = "<group>";
+		};
+		78596FAE280F2C8200A7AC78 /* lesson2 */ = {
+			isa = PBXGroup;
+			children = (
+				78596FAF280F2CB200A7AC78 /* lesson2.swift */,
+			);
+			path = lesson2;
 			sourceTree = "<group>";
 		};
 		78F176C7280F0C4400EE4D9A = {
@@ -68,6 +77,8 @@
 		78F176D2280F0C4400EE4D9A /* GBSwiftHomework */ = {
 			isa = PBXGroup;
 			children = (
+				78F176D3280F0C4400EE4D9A /* main.swift */,
+				78596FAE280F2C8200A7AC78 /* lesson2 */,
 				7808BBB3280F1F430020B777 /* lesson1 */,
 			);
 			path = GBSwiftHomework;
@@ -133,6 +144,7 @@
 			files = (
 				78F176D4280F0C4400EE4D9A /* main.swift in Sources */,
 				7808BBB9280F20560020B777 /* lesson1.swift in Sources */,
+				78596FB0280F2CB200A7AC78 /* lesson2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
