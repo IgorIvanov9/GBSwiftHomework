@@ -9,4 +9,5 @@ import Foundation
 
 //let lesson1 = Lesson1()
 //let lesson2 = Lesson2()
-let lesson3 = Lesson3()
+//let lesson3 = Lesson3()
+let lesson5 = Lesson5()
