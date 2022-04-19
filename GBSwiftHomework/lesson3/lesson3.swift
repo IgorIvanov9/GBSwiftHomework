@@ -7,88 +7,76 @@
 
 import Foundation
 
-struct queue <T> {
-    private var elements: [T] = []
+/* 1. Описать несколько структур – любой легковой автомобиль SportCar и любой грузовик TrunkCar.
+ 
+ 2. Структуры должны содержать марку авто, год выпуска, объем багажника/кузова, запущен ли двигатель, открыты ли окна, заполненный объем багажника.
+ 
+ 3. Описать перечисление с возможными действиями с автомобилем: запустить/заглушить двигатель, открыть/закрыть окна, погрузить/выгрузить из кузова/багажника груз определенного объема.
+ 
+ 4. Добавить в структуры метод с одним аргументом типа перечисления, который будет менять свойства структуры в зависимости от действия.
+ 
+ 5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
+ 
+ 6. Вывести значения свойств экземпляров в консоль. */
+
+enum WindowStatus: String { // Окно открыто или закрыто
+    case open
+    case close
+}
+
+enum EngineStatus: String { // Двигателя влючен или выключен
+    case start
+    case stop
+}
+
+enum TrunkOfCar: String { // Полный багажник или пустой
+    case full
+    case empty
+}
+
+enum WindowStatusBacDoor: String { // Окно багажника открыто или закрыто
+    case open
+    case close
+}
+
+enum loadThings: String{  // Погрусить вещи в багажник или нет
+    case yes
+    case not
+}
+
+struct SportCar {
+    let brand: String
+    let year: Int
+    let carVolume: Int
+    var isEngineWorking: EngineStatus
+    var isWindowsOpen: WindowStatus
     
-    public var isEmpty: Bool {
-        return elements.count == 0
+    mutating func startEngine(){       // Изменение метода с запуска двигателя на заглушение двигателя
+        self.isEngineWorking = .start
     }
-    
-    mutating func enqueue(element: T) {
-        elements.append(element)
-    }
-    
-    mutating func dequeue()->T {
-        return elements.removeLast()
-    }
-    
-    func head() -> T? {
-        if isEmpty {
-            print("The elemnets aren't found. Array is empty.")
-            return nil
-        } else {
-            print("Last element is \(elements.last!)")
-            return elements.last
-        }
-    }
-    
-    func front() -> T? {
-        if isEmpty {
-            print("The elemnets aren't found. Array is empty.")
-            return nil
-        } else {
-            print("First element is \(elements.first!)")
-            return elements.first
-        }
-    }
-    
-    func printMyQueue() {
-        print(elements)
+    mutating func openWindow(){         // Изменение метода закрытого окна на открытое
+        self.isWindowsOpen = .open
     }
 }
 
-extension queue {
-    func myFilter(predicate:(T) -> Bool) -> [T] {
-        var result = [T]()
-        for i in elements {
-            if predicate(i) {
-                result.append(i)
-            }
-        }
-        return result
-    }
-}
-
-
-struct Journal {
-    var name: String
-    var mark: Int
-}
-
-extension Journal: CustomStringConvertible {
-    var description : String {
-        return "Name: \(name), Mark: \(mark)"
-    }
+struct TrunkCar {
+    let brand: String
+    let year: Int
+    let trunkVolume: Int
+    var isEngineWorking: Bool
+    var isWindowsOpen: Bool
 }
 
 class Lesson3 {
     
     init() {
         
-        var pupil = queue<Journal>()
-        pupil.enqueue(element: .init(name: "Kath", mark: 4))
-        pupil.enqueue(element: .init(name: "Igor", mark: 5))
-        pupil.enqueue(element: .init(name: "Ann", mark: 3))
-        pupil.enqueue(element: .init(name: "Max", mark: 5))
-        pupil.enqueue(element: .init(name: "Dima", mark: 3))
-        pupil.enqueue(element: .init(name: "Petya", mark: 4))
-        pupil.enqueue(element: .init(name: "Ksenia", mark: 5))
-        pupil.enqueue(element: .init(name: "Mark", mark: 5))
+        let sportCarOne = SportCar(brand: "Audi", year: 2019, carVolume: 200, isEngineWorking: .start, isWindowsOpen: .open)
+        print(sportCarOne.brand , sportCarOne.year, sportCarOne.isWindowsOpen)
         
-        pupil.printMyQueue()
-        
-        let honoursPupil = pupil.myFilter(predicate: {$0.mark == 5})
-        print(honoursPupil)
+        let trunkOne = TrunkCar(brand: "Kamaz", year: 2015, trunkVolume: 10000, isEngineWorking: true, isWindowsOpen: false)
+        print(trunkOne.brand, trunkOne.trunkVolume, trunkOne.isWindowsOpen)
         
     }
+    
 }
