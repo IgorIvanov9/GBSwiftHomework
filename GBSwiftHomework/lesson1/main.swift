@@ -7,4 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
+let lesson1 = Lesson1()
+
+lesson1.solveQuadraticEquation()
